@@ -18,7 +18,7 @@ using static System.Console;
 
 Clear();
 WriteLine();
-WriteLine("    # MaTrix GeNeRaTiNg & elemend found #");
+WriteLine("    # MaTrix GeNeRaTiNg & element found #");
 WriteLine();
 
 Write("Enter numbers of matrix rows: ");
@@ -29,9 +29,9 @@ Write("Enter Min value of matrix element: ");
 int minValueArray = int.Parse(ReadLine()!);
 Write("Enter Max value of matrix element: ");
 int maxValueArray = int.Parse(ReadLine()!);
-Write("Enter the row number for element serach: ");
+Write("Enter the row number for element search: ");
 int elementRows = int.Parse(ReadLine()!);
-Write("Enter the column number for element serach: ");
+Write("Enter the column number for element search: ");
 int elementColumn = int.Parse(ReadLine()!);
 WriteLine();
 
