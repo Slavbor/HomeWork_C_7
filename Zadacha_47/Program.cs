@@ -16,7 +16,7 @@ using static System.Console;
 
 Clear();
 WriteLine();
-WriteLine("    # Matrix generation #");
+WriteLine("    # MaTrix GeNeRaTiNg #");
 WriteLine();
 
 Write("Enter numbers of matrix rows: ");
@@ -30,6 +30,8 @@ double[,] array = GetMatrixArray(arrayRows, arrayColumns);
 PrintMatrixArray(array);
 WriteLine();
 
+
+
 double[,] GetMatrixArray(int rows, int columns)
 {
     Random rand = new Random();
@@ -38,7 +40,7 @@ double[,] GetMatrixArray(int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            resultArray[i, j] = rand.NextDouble() * (-10 + 100) - 10;
+            resultArray[i, j] = rand.NextDouble() * (-10 - 100) + 100;
         }
     }
     return resultArray;
