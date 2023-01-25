@@ -1,5 +1,5 @@
-﻿// Задача 52. Напишите программу реализующую методы, 
-// формирования двумерного массива и массива средних 
+﻿// Задача 52. Напишите программу реализующую методы,
+// формирования двумерного массива и массива средних
 // арифметических значений каждого столбца.
 
 // Например, задан массив:
@@ -27,21 +27,24 @@ WriteLine();
 int[,] array = GetMatrixArray(RowsMain, ColumnsMain, minValueArray, maxValueArray);
 PrintMatrixArray(array);
 WriteLine();
-WriteLine("-=Average of each column=-");
+WriteLine("-= Column average array=-");
 
-  double summ = 0;
-    for (int i = 0; i < array.GetLength(1); i++)
+double[] AvArray = new double[array.GetLength(1)];
+
+double summ = 0;
+for (int i = 0; i < array.GetLength(1); i++)
+{   
+    for (int j = 0; j < array.GetLength(0); j++)
     {
-        for (int j = 0; j < array.GetLength(0); j++)
-        {
-
-            summ += array[j, i];
-            
-
-        }
-        Write($"  {Math.Round(summ / array.GetLength(0), 1)}");       
-        summ = 0;
+        summ += array[j, i];
     }
+    AvArray[i] = Math.Round(summ / array.GetLength(0), 1);
+    
+    summ = 0;
+}
+
+PrintArrayDouble(AvArray);
+
 WriteLine();
 WriteLine();
 
@@ -71,9 +74,13 @@ void PrintMatrixArray(int[,] inArray)
     }
 }
 
-// int[,] ColumnAverageCalc(int[,] AveregeArray)
-// {   
-
-
-
-// }
+void PrintArrayDouble(double[] DoubleArray)
+{
+    Write("[");     
+    for (int i = 0; i < DoubleArray.Length; i++)
+    {
+        Write($"{Math.Round(DoubleArray[i], 1)}");
+        Write(i < DoubleArray.Length - 1 ? ", " : "");
+    }
+    Write("]");
+}
